@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Hotel booking confirmation page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 0.6875rem; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    .sidebar{position:relative;
+    left:0;
+    height:100vh;
+  width: 200px;
+  top:0;
+background-color: #f3f2e6;}
+body{background-color: #f3f2e6;
+width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.navbar a{display:flex;
+  align-items: center;
+text-decoration: none;
+color: black;
+margin-bottom: 10px; gap: 10px;}
+.l1{margin:20px auto;
+  width:80%;
+  border:none;
+border-top: 1px solid #ddd;
+  ;}
+  .l2{margin: 20px auto;
+  width:80%;
+position: relative;
+top: 235px;
+border:none;
+border-top: 1px solid #ddd;}
+  .weather{background-color: burlywood;
+  border-radius: 10px;
+width: 80%;
+margin:20px auto;
+height: 80px;
+padding-left: 10px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+position: relative;
+overflow: hidden;
+bottom: -240px;
+font-family: "Fraunces",serif;
+}
+.weather p{margin: 2px 0;
+font-size: 0.6em;
+font-weight:lighter;
+opacity:0.7;
+}
+.weather h2{margin: 2px 0;}
+.sun{position: absolute;
+top:-17px;
+right:-10px;
+width: 60px;}
+.info{letter-spacing:2px;
+font-family: Arial, sans-serif;
+line-height: 1.4;
+position:absolute;
+bottom:15px;
+font-size: 0.5em;
+opacity:0.7;
+font-weight: lighter;}
+.main{
+position: absolute;
+left:225px;
+top:0;}
+.h2{color:rgb(156, 65, 65)}
+.button{display: flex;
+flex-direction: row;
+gap: 10px;
+position: relative;
+top:-650px;
+}
+.two{background-color: black;
+color: white;
+position: absolute;
+right:420px;
+width:100px;
+height:20px;
+font-size: 0.7em;
+border-radius: 10px;}
+.one{position: absolute;
+right:530px;
+border-radius: 10px;
+color:black;
+background-color: white;
+width:100px;
+height:20px;
+font-size: 0.7em;}
+.main h2{margin-top: 0;
+font-family: "Fraunces",serif;}
+.main p{margin-bottom: 5px;}
+.card{position:relative;
+background-color: white;
+transform:translate(120%,20%) rotate(-5deg);
+width:18vw;
+height:40vh;
+border-radius: 10px;
+top:-620px;
+left:20px;}
+.receipt{font-size: smaller;
+position: absolute;
+top:1px;
+left:10px;
+font-size: 0.6em;}
+.details{display:block;
+position:absolute;
+right:10px;
+font-size: smaller;
+top:11px;
+font-size: 0.6em;
+}
+.details p{margin:0;}
+.details .p{position:absolute;
+right:0;}
+.stay{position: absolute;
+left:10px;
+top:11px;
+margin-top: 3px;
+font-size: 0.9em;}
+.in{display:block;
+margin: 3px;
+position: absolute;
+left:40px;
+top:80px;
+line-height: 0.2;}
+.out{display:block;
+margin-top: 0;
+position: absolute;
+right:40px;
+top:80px;
+line-height: 0.2;
+margin:3px;}
+.item{position: absolute;
+top:150px;
+display:block;
+left:10px;
+line-height: 0.7;
+font-size: 0.6em;
+font-weight: bold;}
+.item span{position: absolute;
+right:-70px;}
+.pay{position: absolute;
+bottom:30px;
+left:10px;
+font-size: 0.7em;}
+.pay span{position: absolute;
+right:-170px;
+font-size: 1.4em;}
+.bar{position:absolute;
+bottom:2px;
+font-size: 0.6em;
+display:flex;
+flex-direction: row;
+left:10px;
+font-size: 0.6em;}
+.bar img{position: absolute;
+right:-145px;
+height: 20px;
+top:6px;}
+.hr{margin: 20px auto;
+width:80%;
+position: absolute;
+top: 45px;
+right:29px;
+border:none;
+border-top: 1px solid #ddd;}
+.in p:first-of-type{position: absolute;
+left:5px;
+top:-8px;}
+.in p{font-size: 0.6em;}
+.out p{font-size: 0.6em;}
+.out p:first-of-type{position: absolute;
+left:5px;
+top:-8px;}
+.br{margin: 20px auto;
+width:80%;
+position: absolute;
+top: 130px;
+right:29px;
+border:none;
+border-top: 1px solid #ddd;}
+.tour{font-weight: lighter;}
+.paid{margin: 20px auto;
+width:80%;
+position: absolute;
+top: 190px;
+right:29px;
+border:none;
+border-top: 1px solid black;}
+.welcome{
+  position:relative;
+background:linear-gradient(to bottom,#995234 0%,#A7654D 45%,#A97C6B 100%);
+transform:translate(120%,20%) rotate(5deg);
+width:18vw;
+height:40vh;
+border-radius: 10px;
+top:-890px;
+left:265px;
+}
+.dr{border:none;
+border-top: 2px dotted white;
+opacity:0.25;
+width:80%;
+position:absolute;
+top:5px;
+right:29px;}
+.wlcm{position: absolute;
+top:9px;
+left:8px;
+font-size: 0.7em;
+color:white;
+font-weight: lighter;}
+.san{position: absolute;
+right:5px;
+top:25px;
+width:40px;
+height:40px;}
+.para{bottom:150px;
+left:8px;
+position:absolute;
+color:rgb(201, 201, 105);
+font-size: 0.8em;}
+.para span{font-size: 1.2em;
+color:white;}
+.note{position:absolute;
+left:8px;
+bottom:100px;
+font-size: 0.7em;
+color:white;
+font-weight: lighter;}
+.room{position:absolute;
+bottom:25px;
+left:8px;
+font-size: 0.7em;
+color:white;
+}
+h6{position: absolute;
+bottom:-15px;
+left:8px;
+font-size: 0.9em;
+color:white;}
+.mast{display:flex;
+flex-direction: row;
+position: relative;
+left:600px;
+bottom:790px;
+}
+.arrival{position:absolute;
+  width:200px;
+height: 140px;
+border-radius: 10px;
+left:-300px;
+background-color: white;}
+.h5{position:absolute;
+top:20px;
+font-size: 0.9em;
+left:10px;}
+.h6{position: absolute;
+color: #995234;
+left: 40px;
+top:-20px;}
+.h6-head{position: absolute;
+color: rgb(102, 102, 206);
+left: 40px;
+top:-20px;}
+.h6-break{position: absolute;
+color: rgb(228, 58, 86);
+left: 40px;
+top:-20px;}
+.wifi{position:absolute;
+  width:200px;
+height: 140px;
+border-radius: 10px;
+left:-50px;
+background-color: white;}
+.breakfast{position:absolute;
+  width:200px;
+height: 140px;
+border-radius: 10px;
+left:230px;
+background-color: white;}
+.key{position: absolute;
+background-color: #995234;
+border-radius: 5px;
+left: 10px;
+width:25px;
+height:25px;
+top:10px;}
+.wf{position:absolute;
+background-color: rgb(102, 102, 206);
+border-radius: 5px;
+left:10px;
+width:25px;
+height:25px;
+top:10px;}
+.breko{position: absolute;
+background-color: rgb(228, 58, 86);
+border-radius: 5px;
+left:10px;
+width:25px;
+height:25px;
+top:10px;}
+.number{position: absolute;
+right:10px;
+color:#bb7d62;
+top:10px;
+font-weight: bold;
+font-size: 1.1em;}
+.number-2{position: absolute;
+right:10px;
+color:rgb(128, 128, 218);
+top:10px;
+font-weight: bold;
+font-size: 1.1em;}
+.number-3{position: absolute;
+right:10px;
+color:rgb(236, 96, 120);
+top:10px;
+font-weight: bold;
+font-size: 1.1em;}
+.graph{position:absolute;
+top:55px;
+font-size: 0.7em;
+left:10px;}
+.ring{position: absolute;
+top:75px;
+font-size: 0.7em;
+left:10px;
+font-weight: lighter;}
+.fresh{position: absolute;
+top:75px;
+font-size: 0.7em;
+left:10px;
+font-weight: lighter;}
+.network{display:flex;
+flex-direction: row;
+position: absolute;
+top:90px;
+width:80%;
+height:20px;
+font-size: 0.7em;
+border-radius: 5px;
+left:10px;
+background-color: rgb(226, 222, 222);
+align-items: center;}
+.password{display:flex;
+flex-direction: row;
+position: absolute;
+bottom:5px;
+width:80%;
+height:20px;
+font-size: 0.7em;
+border-radius: 5px;
+background-color: rgb(226, 222, 222);
+align-items: center;
+left:10px;}
+button{position:absolute;
+right:5px;
+width:30px;
+height:15px;
+font-size: 0.7em;
+border-radius: 7px;
+display:flex;
+justify-content: center;}
+.net{position: absolute;
+left:5px;}
+.name{position: absolute;
+right:5px;
+font-size: 0.8em;}
+.pass{position: absolute;
+left:5px;}
+.det{position: absolute;
+right:40px;
+font-size: 0.8em;}
+.vertical{
+  display: inline-block;
+  width: 1px;
+  height: 100%;
+  background-color:#ccc;
+  border: none;
+  vertical-align: middle;
+  margin: 0 10px;
+  position: absolute;
+  left:200px;
+  top: 0;
+}
+footer{position: absolute;
+bottom:0;
+left:400px;}
+.your{border-radius: 5px;
+background-color: white;}
+.badge{position:relative;
+right:-70px;
+text-align: center;
+color: white;
+border-radius: 30px;
+background-color:#995234;
+font-size: 0.6em;
+width:10px;}
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+
+      <a><img src="assets/images/logo.svg" alt="Maison Soleil"></a>
+      
+      <hr class="l1">
+    <nav class="navbar">
+      <div class="your"><a href="#"><img src="assets/images/icon-bed.svg">Your stay
+          <div class="badge">1</div>
+        </a></div>
+        <a href="#"><img src="assets/images/icon-house.svg">The house</a>
+        <a href="#"><img src="assets/images/icon-pin.svg">Around town</a>
+        <a href="#"><img src="assets/images/icon-breakfast-outline.svg">Breakfast</a>
+        <a href="#"><img src="assets/images/icon-mail.svg">Messages</a>
+    </nav>
+
+    <div class="weather">
+      <p>Today in Cassis</p>
+      <h2>27°</h2>
+      <p>Sunny · light breeze</p>
+      <img src="assets/images/icon-weather.svg" class="sun">
+    </div>
+    <hr class="l2">
+    
+    <div class="info">
+      <p>Est. 1987</p>
+      <p>Maison Soleil · 12 Rue des <br>Oliviers · Cassis</p>
+      <p>© 2026 Maison Soleil</p>
+    </div>
+  </div>
+<hr class="vertical">
+  
+  <div class="main">
+  <p>Booking · Confirmed</p>
+  <h2>Bienvenue, <span class="h2">Lucia.</span></h2>
+  </div>
+  <div class="button" >
+  <button type="button" class="one">Print receipt</button>
+  <button type="button" class="two">Add to calendar</button>
+  </div>
+  
+
+  <div class="card">
+    <div class="receipt"><p>Receipt</p></div>
+    <div class="details"><p>№ MS-2026</p>
+    <p class="p">0421-AH</p>
+    </div>
+
+    <div class="stay"><h4>Your stay</h4></div>
+    <hr class="hr">
+    <div class="in">
+      <p>Check in</p>
+      <h3>25 Apr</h3>
+      <p>Saturday · 15:00</p>
+    </div>
+    <div class="out">
+      <p>Check out</p>
+      <h3>29 Apr</h3>
+      <p>Wednesday · 11:00</p>
+    </div>
+    <hr class="br">
+    <div class="item">
+      <p>Room · La Garrigue · 4 nights
+      <span>€ 620.00</span></p>
+      <p>Breakfast · 2 guests
+      <span>€ 96.00</span></p>
+      <p class="tour">Tourist tax
+      <span class="tour">€ 14.40</span></p>
+    </div>
+    <hr class="paid">
+    <div class="pay">
+      <p>Total paid
+      <span><strong>€ 730.40</strong></span></p>
+    </div>
+    <div class="bar">
+      <p>Paid · Wise · GBP</p>
+      <img src="assets/images/icon-barcode.svg">
+    </div>
+  </div>
+  <div class="welcome">
+    <hr class="dr">
+  <p class="wlcm">Welcome Card</p>
+  <img class="san" src="assets/images/icon-sun.svg">
+  <p class="para">A note from your host,<br> <span>Margaux.</span></p>
+  <p class="note">We're so glad you're coming. The shutters will be open, the lemonade cold, and the cat - Poivre - pretending not to notice you.</p>
+  <p class="room">Room</p>
+  <h6>La Garrigue</h6>
+
+  </div>
+
+  <div class="mast">
+    <div class="arrival">
+      <div class="key"><img src="assets/images/icon-key.svg"></div>
+      <h6 class="h6">Arrival</h6>
+      <span class="number">01</span>
+      <h5 class="h5">Check-in from 15:00</h5>
+      <p class="graph">Sat, 25 April</p>
+      <p class="ring">Ring the brass bell by the blue door. If we're at the market, the key is in the terracotta pot by the olive tree.</p>
+    </div>
+    <div class="wifi">
+      <div class="wf"><img src="assets/images/icon-wifi.svg"></div>
+      <h6 class="h6-head">Wifi</h6>
+      <span class="number-2">02</span>
+      <h5 class="h5">Le Soleil · Guest</h5>
+      <p class="graph">Password below</p>
+      <div class="network"><p class="net">Network</p>
+      <p class="name">Le Soleil · Guest</p></div>
+      <div class="password"><p class="pass">Password</p>
+      <p class="det">soleil-2026</p>
+      <button type="button" onclick="copyText()">Copy</button></div>
+    </div>
+    <div class="breakfast">
+      <div class="breko"><img src="assets/images/icon-breakfast.svg"></div>
+      <h6 class="h6-break">Breakfast</h6>
+      <span class="number-3">03</span>
+      <h5 class="h5">Served 8 - 10:30</h5>
+      <p class="graph">On the terrace</p>
+      <p class="fresh">Fresh figs, Marseille honey, pain au levain, and espresso. Gluten-free option? Leave a note the night before.</p>
+    </div>
+  </div>
+</div>
+
+
+
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+    Coded by <a href="#">Henry Omondi</a>.
+  </footer>
+</body>
+</html>
